@@ -24,3 +24,7 @@ clean:
 env-configpath:
 	@export KUBECONFIG=`kind get kubeconfig-path --name $(CLUSTER_NAME)`
 
+.PHONY: clip-dashboard-token
+clip-dashboard-token:
+	@KUBECONFIG=`kind get kubeconfig-path --name $(CLUSTER_NAME)` && \
+	kubectl get secret/`kubectl get serviceaccounts/admin-user -n kube-system -o jsonpath='{.secrets[0].name}'` -n kube-system -o jsonpath='{.data.token}' | base64 -d -w0 | xclip -sel clip
