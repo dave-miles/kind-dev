@@ -22,7 +22,7 @@ clean:
 
 .PHONY: env-configpath
 env-configpath:
-	@export KUBECONFIG=`kind get kubeconfig-path --name $(CLUSTER_NAME)`
+	@echo export KUBECONFIG=`kind get kubeconfig-path --name $(CLUSTER_NAME)`
 
 .PHONY: clip-dashboard-token
 clip-dashboard-token:
