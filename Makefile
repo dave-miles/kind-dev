@@ -19,3 +19,8 @@ addons:
 clean:
 	@echo "+ $@"
 	kind delete cluster --name $(CLUSTER_NAME)
+
+.PHONY: env-configpath
+env-configpath:
+	@export KUBECONFIG=`kind get kubeconfig-path --name $(CLUSTER_NAME)`
+
