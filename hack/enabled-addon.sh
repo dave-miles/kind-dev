@@ -7,7 +7,8 @@ SCRIPT_PATH=$(dirname "$(readlink -f "$BASH_SOURCE")")
 TMP_ROOT=$SCRIPT_PATH/_tmp
 TMP_GIT=$TMP_ROOT/git
 TMP_MANIFESTS=$TMP_ROOT/manifests
-KUBECONFIG=$(kind get kubeconfig-path --name="local")
+CLUSTER_NAME=${CLUSTER_NAME:-local}
+KUBECONFIG=$(kind get kubeconfig-path --name="$CLUSTER_NAME")
 
 sh_c='sh -c'
 
