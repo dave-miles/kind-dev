@@ -1,4 +1,4 @@
-CLUSTER_NAME:=local
+CLUSTER_NAME?=local
 
 .PHONY: startup
 startup: bootstrap addons
