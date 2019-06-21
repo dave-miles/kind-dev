@@ -97,8 +97,8 @@ metallb() {
 ingress_nginx(){
 	check_metallb
 
-	$sh_c "KUBECONFIG=${KUBECONFIG} kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/mandatory.yaml"
-	$sh_c "KUBECONFIG=${KUBECONFIG} kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/provider/cloud-generic.yaml"
+	$sh_c "KUBECONFIG=${KUBECONFIG} kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.24.1/deploy/mandatory.yaml"
+	$sh_c "KUBECONFIG=${KUBECONFIG} kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.24.1/deploy/provider/cloud-generic.yaml"
 }
 
 dashboard(){
